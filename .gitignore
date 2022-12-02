@@ -1,4 +1,11 @@
+# Node stuff
 /node_modules
 /package-lock.json
 /package.json
+
+# Puzzle inputs
 solutions/day*/input.txt
+solutions/day*/example.txt
+
+# TypeScript dist files
+solutions/day2/both.js
