@@ -3,7 +3,8 @@
 		"strict": true,
 		"target": "ES2022",
 		"skipLibCheck": true,
-		"module": "CommonJS"
+		"module": "CommonJS",
+		"noImplicitAny": true
 	},
 	"include": [
 		"solutions/**/*.ts"
