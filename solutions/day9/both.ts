@@ -13,15 +13,8 @@ const isTouching = (node: Node, target: Node) =>
 
 const updatePosition = (node: Node, target: Node) => {
 	if (isTouching(node, target)) return;
-	if (node.x === target.x || node.y === target.y) {
-		if (node.x <= target.x - 2) node.x++;
-		if (node.x >= target.x + 2) node.x--;
-		if (node.y <= target.y - 2) node.y++;
-		if (node.y >= target.y + 2) node.y--;
-	} else {
-		node.y += Math.sign(target.y - node.y);
-		node.x += Math.sign(target.x - node.x);
-	}
+	node.y += Math.sign(target.y - node.y);
+	node.x += Math.sign(target.x - node.x);
 };
 
 const secondNodePositions = new Set();
