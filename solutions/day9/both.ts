@@ -19,10 +19,8 @@ const updatePosition = (node: Node, target: Node) => {
 		if (node.y <= target.y - 2) node.y++;
 		if (node.y >= target.y + 2) node.y--;
 	} else {
-		if (node.y < target.y) node.y++;
-		else if (node.y > target.y) node.y--;
-		if (node.x > target.x) node.x--;
-		else if (node.x < target.x) node.x++;
+		node.y += Math.sign(target.y - node.y);
+		node.x += Math.sign(target.x - node.x);
 	}
 };
 
