@@ -7,17 +7,9 @@ const input = readFileSync("./input.txt", "utf-8")
 type Node = { x: number, y: number; };
 const nodes = Array.from({ length: 10 }, (): Node => ({ x: 0, y: 0 }));
 
-const isTouching = (node: Node, target: Node) => {
-	for (const x of [-1, 0, 1]) {
-		for (const y of [-1, 0, 1]) {
-			if (target.x === node.x + x && target.y === node.y + y) {
-				return true;
-			}
-		}
-	}
-
-	return false;
-};
+const isTouching = (node: Node, target: Node) =>
+	Math.abs(node.x - target.x) <= 1 &&
+	Math.abs(node.y - target.y) <= 1;
 
 const updatePosition = (node: Node, target: Node) => {
 	if (isTouching(node, target)) return;
